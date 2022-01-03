@@ -5,16 +5,22 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    private InputUser _inputActions;
     private RigidBodeyInteractable _rigidbody;
 
     private void Start()
     {
-        GetComponent<InputPlayer>().OnPosition += Move;
+         _inputActions =  FindObjectOfType<InputContainer>().InputAction;
         _rigidbody = GetComponent<RigidBodeyInteractable>();
     }
 
-    public void Move(Vector3 movement)
+    private void Update()
     {
-        _rigidbody.MovePosition(transform.position + movement * _speed * Time.deltaTime);
+        Move();
+    }
+
+    public void Move()
+    {
+        _rigidbody.MovePosition(transform.position + (Vector3)_inputActions.Player.Move.ReadValue<Vector2>() * _speed * Time.deltaTime);
     }
 }

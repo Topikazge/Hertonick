@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<InputPlayer>().OnPosition += GetSideGaze;
+    //    GetComponent<InputPlayer>().OnPosition += GetSideGaze;
     }
 
     private void GetSideGaze(Vector3 sideGaze)
