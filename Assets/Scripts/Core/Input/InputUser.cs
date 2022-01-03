@@ -38,11 +38,11 @@ public partial class @InputUser : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shot"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""8a8552d9-3f6f-4320-b845-c464d3da5753"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],

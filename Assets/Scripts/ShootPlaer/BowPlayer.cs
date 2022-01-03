@@ -15,13 +15,12 @@ public class BowPlayer : MonoBehaviour
 
         _inputActions = FindObjectOfType<InputContainer>().InputAction;
         _inputActions.Player.Shot.started += ctx => StartShot(ctx);
-        _inputActions.Player.Shot.canceled += ctx => StartShot(ctx);
+        _inputActions.Player.Shot.canceled += ctx => ShotArrow(ctx);
     }
 
     public void StartShot(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("ьссссссср акърэ 1 ");
-        _arrowKeeper.GetArrow(ShootArrow);
+       
     }
 
     public void ShotCharging()
@@ -29,9 +28,8 @@ public class BowPlayer : MonoBehaviour
 
     }
 
-    private void ShootArrow(Arrow arrow)
+    private void ShotArrow(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("ьссссссср акърэ 2 ");
-        arrow.Flight(_player.SideGaze);
+       
     }
 }
