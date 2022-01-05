@@ -38,10 +38,13 @@ public class Arrow : MonoBehaviour
     {
         _stateMachine.Tick();
     }
-    public void Flight(Vector2 movement)
+    public void Flight(Vector2 movement,float force)
     {
         _transform.Position = _player.transform.position;
         _stateMachine.SwitchState<FlightArrowState>();
-        _rigidbody.AddForce(movement  *_speed);
+        _rigidbody.AddForce(movement  *_speed * force);
+        Debug.Log("movement -" + movement);
+        Debug.Log("_speed -" + _speed);
+        Debug.Log("force -" + force);
     }
 }

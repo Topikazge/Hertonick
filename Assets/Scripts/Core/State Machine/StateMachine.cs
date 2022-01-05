@@ -13,7 +13,6 @@ public class StateMachine : MonoBehaviour, IStateMachine
         if (stateBases == null)
             return;
         _states = stateBases;
-        Debug.Log("_states - " + _states);
     }
 
     public void SetFirstState<T>() where T : StateBase

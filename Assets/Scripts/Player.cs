@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Vector2 SideGaze { get; private set; }
+    public SightPlayer SightPlayer { get; private set; }
+    private InputUser _inputActions;
 
-    private void Start()
+    private void Awake()
     {
-    //    GetComponent<InputPlayer>().OnPosition += GetSideGaze;
+        SightPlayer = new SightPlayer();
+        _inputActions = FindObjectOfType<InputContainer>().InputAction;
     }
 
-    private void GetSideGaze(Vector3 sideGaze)
+    private void Update()
     {
-        SideGaze = sideGaze;
+        SideUpdate();
+    }
+
+    private void SideUpdate()
+    {
+        SightPlayer.SideGaze = _inputActions.Player.Move.ReadValue<Vector2>();
     }
 }

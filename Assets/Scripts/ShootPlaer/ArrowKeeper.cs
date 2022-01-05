@@ -13,6 +13,10 @@ public class ArrowKeeper : MonoBehaviour
     public event Action OnPutArrow;
     public event Action OnGetArrow;
 
+    private void Start()
+    {
+        _isArrowInPlace = true;
+    }
     public void PutArrow(Arrow arrow)
     {
         if ((arrow == null) && (_arrow == arrow))
@@ -23,9 +27,13 @@ public class ArrowKeeper : MonoBehaviour
 
     public void GetArrow(Action<Arrow> action)
     {
-        _isArrowInPlace = false;
         OnGetArrow?.Invoke();
         if (_isArrowInPlace && (action != null))
+        {
+            _isArrowInPlace = false;
             action(_arrow);
+            _arrow = null;
+        }
+         
     }
 }
