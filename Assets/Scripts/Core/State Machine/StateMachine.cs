@@ -39,6 +39,11 @@ public class StateMachine : MonoBehaviour, IStateMachine
         return state;
     }
 
+    public StateBase GetCurrentState()
+    {
+        return _currentState;
+    }
+
     public void Tick()
     {
         _currentState.Update();
