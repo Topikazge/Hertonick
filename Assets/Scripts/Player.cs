@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
 
     private void SideUpdate()
     {
-        SightPlayer.SideGaze = _inputActions.Player.Move.ReadValue<Vector2>();
+        Vector2 vector =_inputActions.Player.Move.ReadValue<Vector2>();
+        if (vector.x == 0 && vector.y == 0)
+            return;
+            SightPlayer.SideGaze = vector;
+      
     }
 }

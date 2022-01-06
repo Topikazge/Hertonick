@@ -11,12 +11,6 @@ public class Arrow : MonoBehaviour
     private TransformInteractable _transform;
     private IStateMachine _stateMachine;
 
-    private void Awake()
-    {
-
-
-   
-    }
 
     private void Start()
     {
@@ -42,9 +36,6 @@ public class Arrow : MonoBehaviour
     {
         _transform.Position = _player.transform.position;
         _stateMachine.SwitchState<FlightArrowState>();
-        _rigidbody.AddForce(movement  *_speed * force);
-        Debug.Log("movement -" + movement);
-        Debug.Log("_speed -" + _speed);
-        Debug.Log("force -" + force);
+        _rigidbody.AddForce(movement * _speed * force);
     }
 }

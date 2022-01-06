@@ -23,6 +23,6 @@ public class MovePlayer : MonoBehaviour
 
     public void Move()
     {
-        _rigidbody.MovePosition(transform.position + (Vector3)_player.SightPlayer.SideGaze * _speed * Time.deltaTime);
+        _rigidbody.MovePosition(transform.position + (Vector3)_inputActions.Player.Move.ReadValue<Vector2>() * _speed * Time.deltaTime);
     }
 }

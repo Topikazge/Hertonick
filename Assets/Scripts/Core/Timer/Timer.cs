@@ -89,7 +89,7 @@ public class Timer
         isActive = false;
         isPaused = false;
 
-        OnTimerValueChangedEvent?.Invoke(remainingSeconds);
+     //   OnTimerValueChangedEvent?.Invoke(remainingSeconds);
         OnTimerFinishedEvent?.Invoke(_time);
         _time = 0f;
     }

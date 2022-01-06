@@ -20,7 +20,11 @@ public class RigidBodeyInteractable : MonoBehaviour
     }
     public void AddForce(Vector2 force)
     {
-        _rigidbody.AddForce(force);
+        _rigidbody.AddForce(force,ForceMode2D.Force);
     }
 
+    public void SetVelocity(Vector2 velocity)
+    {
+        _rigidbody.velocity = velocity;
+    }
 }

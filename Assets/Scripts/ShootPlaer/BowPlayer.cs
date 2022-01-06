@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class BowPlayer : MonoBehaviour
 {
-    private ArrowKeeper _arrowKeeper;
+    private Quiver _arrowKeeper;
     private Player _player;
     private InputUser _inputActions;
     private Timer _timerEnter;
@@ -13,17 +13,18 @@ public class BowPlayer : MonoBehaviour
     private void Start()
     {
         _player = GetComponent<Player>();
-        _arrowKeeper = GetComponent<ArrowKeeper>();
-
+        _arrowKeeper = GetComponent<Quiver>();
 
         _inputActions = FindObjectOfType<InputContainer>().InputAction;
         _inputActions.Player.Shot.started += ctx => StartShot(ctx);
         _inputActions.Player.Shot.canceled += ctx => ShotArrow(ctx);
+
+        _timerEnter = new Timer(1.5f);
+        _timerEnter.OnTimerFinishedEvent += ShotArrow;
     }
 
     public void StartShot(InputAction.CallbackContext callbackContext)
     {
-        _timerEnter = new Timer(1);
         _timerEnter.Start();
         _timerEnter.OnTimerFinishedEvent += ShotArrow;
     }
@@ -48,7 +49,7 @@ public class BowPlayer : MonoBehaviour
 
     private void Shot(Arrow arrow)
     {
-        _force = 100f;
+        Debug.Log("_force - -" + _force);
         arrow.Flight(_player.SightPlayer.SideGaze, _force);
         _force = 0f;
     }

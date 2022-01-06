@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowKeeper : MonoBehaviour
+public class Quiver : MonoBehaviour
 {
     [SerializeField] private Arrow _arrow;
     private bool _isArrowInPlace;
@@ -27,7 +27,7 @@ public class ArrowKeeper : MonoBehaviour
 
     public void GetArrow(Action<Arrow> action)
     {
-        OnGetArrow?.Invoke();
+     //   OnGetArrow?.Invoke();
         if (_isArrowInPlace && (action != null))
         {
             _isArrowInPlace = false;
