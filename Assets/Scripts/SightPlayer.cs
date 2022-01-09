@@ -21,6 +21,7 @@ public class SightPlayer
             if (value != null)
             {
                 _sideGaze = value;
+                Debug.Log("_sideGaze - " + _sideGaze);
             }
         }
     }

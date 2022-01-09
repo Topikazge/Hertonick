@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrowKeeper: {fileID: 1735001837}
-  _speed: 10
+  _speed: 100
   _player: {fileID: 1735001832}
 --- !u!212 &918748605
 SpriteRenderer:
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d3bb770041e5b47ac8e78df6d432ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 11
 --- !u!114 &1735001832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735001827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.27, y: -4.21, z: 0}
+  m_LocalPosition: {x: 7.83, y: -3.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

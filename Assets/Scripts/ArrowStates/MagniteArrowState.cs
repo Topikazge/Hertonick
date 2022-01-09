@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LiesArrowState : ArrowState
+public class MagniteArrowState : ArrowState
 {
-    public LiesArrowState(GameObject gameObject) : base(gameObject)
+    public MagniteArrowState(GameObject gameObject, Player player) : base(gameObject, player)
     {
     }
 

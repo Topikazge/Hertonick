@@ -16,15 +16,23 @@ public class TransformInteractable : MonoBehaviour
         }
     }
 
-    public void Translate(Vector2 movement,Space space = Space.World)
+    public void Translate(Vector2 movement, Space space = Space.World)
     {
         transform.Translate(movement, space);
     }
 
+    public void Rotation(float z)
+    {
+        Debug.Log("z - "+ z);
+        transform.Rotate(0f, 0f, z);
+    }
     private void SetPosition(Vector2 position)
     {
         if (position == null)
             return;
         transform.position = position;
     }
+
+
+
 }

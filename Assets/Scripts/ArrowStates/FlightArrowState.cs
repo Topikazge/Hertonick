@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlightArrowState : ArrowState
 {
-    public FlightArrowState(GameObject gameObject) : base(gameObject)
+    public FlightArrowState(GameObject gameObject, Player player) : base(gameObject, player)
     {
     }
 
@@ -20,6 +20,11 @@ public class FlightArrowState : ArrowState
 
     public override void Update()
     {
-        Debug.LogWarning("Метод жизненого цикла state не задан");
+        Vector2 vector2 = _rigidbody.Velocity;
+        if ((vector2.x == 0) && (vector2.y == 0))
+        {
+            _stateMachine.SwitchState<OnPolArrowState>();
+            Debug.Log("Меняю");
+        }
     }
 }
